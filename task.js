@@ -47,3 +47,14 @@ function secondComputer(max = 100, min = 1, count = 0) {
 }
 
 secondComputer();
+
+function numbersSum(arr) {
+  let resultSum = 0;
+  arr.forEach((number) => {
+    resultSum += number;
+  });
+  return resultSum;
+}
+
+let numbersArray = [10000, 20000, 30000];
+console.log(pp(aa));
