@@ -17,3 +17,27 @@ function mySlice(arr, start, end) {
 
   return resultArr;
 }
+
+function myIndexOf(arr, item, from) {
+  from = typeof from === 'undefined' ? 0 : from;
+  from = from < 0 ? Math.max(0, length + from) : Math.min(from, length);
+
+  if (!Array.isArray(arr)) return null;
+  for (let i = from; i < arr.length; i++) {
+    if (arr[i] === item) return i;
+  }
+  return -1;
+}
+
+const arr = [6, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+function myIncludes(arr, item, from) {
+  if (!Array.isArray(arr)) return false;
+  from = typeof from === 'undefined' ? 0 : from;
+  from = from < 0 ? Math.max(0, length + from) : Math.min(from, length);
+
+  for (let i = from; i < arr.length; i++) {
+    if (arr[i] === item || (Number.isNaN(item) && Number.isNaN(arr[i]))) return true;
+  } // только NaN не равен самому себе
+  return false;
+}
